@@ -1,0 +1,126 @@
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 250px;
+}
+
+button {
+  padding: 8px 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin: 10px auto;
+  padding: 12px;
+  width: 60%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.done {
+  color: green;
+  font-weight: bold;
+}
+
+.not-done {
+  color: red;
+  font-weight: bold;
+}
+
+.delete-btn {
+  color: white;
+  background: red;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+.done-btn {
+  color: white;
+  background: green;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.done-btn:hover {
+  background: darkgreen;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: showToast 3s ease forwards;
+}
+
+@keyframes showToast {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+.edit-btn {
+  background: orange;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.edit-btn:hover {
+  background: darkorange;
+}
+li div {
+  display: flex;
+  gap: 8px;
+}
+li:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
+}

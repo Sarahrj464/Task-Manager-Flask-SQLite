@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    
+    <link rel="stylesheet" href={{url_for('static',filename="style.css")}}>
+
+  </head>
+
+  <body>
+    <h1>Sarah's Task Manager</h1>
+
+    <form action="/add" method="POST">
+      <input type="text" name="task" placeholder="Enter new Task" required />
+      <button type="submit">Add Task</button>
+    </form>
+
+    <ul>
+      {% if tasks %}
+      {% for task in tasks %}
+      <li>
+        <span>
+          {{ task.id }} - {{ task.task }} {% if task.done %}
+          <span class="done">✔</span>
+          {% else %}
+          <span class="not-done">✖</span>
+          {% endif %}
+        </span>
+
+        <div>
+          {%if not task.done%}
+          <a class="done-btn" href="/mark/{{ task.id }}">✔ Done</a>
+          {% endif %}
+          <a class="edit-btn" href="/edit/{{ task.id }}">Edit</a>
+          <a class="delete-btn" href="/delete/{{ task.id }}" onclick="return confirm('Are you sure you want to delete this task?')">Delete</a>
+        </div>
+      </li>
+      {% endfor %}
+
+      {% else %}
+        <p style="text-align:center;">No Tasks yet</p>
+      {% endif %}
+    </ul>
+
+    {% if msg %}
+    <div id="toast" class="toast">{{ msg }}</div>
+    {% endif %}
+  </body>
+</html>
