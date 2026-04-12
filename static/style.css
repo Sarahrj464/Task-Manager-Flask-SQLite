@@ -4,7 +4,7 @@ body {
   padding: 20px;
 }
 
-h1 {
+h1,h3 {
   text-align: center;
 }
 
@@ -41,6 +41,10 @@ li {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
 }
 
 .done {

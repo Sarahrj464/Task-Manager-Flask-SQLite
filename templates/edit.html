@@ -8,8 +8,8 @@
 </head>
 <body>
   <h2>Edit Button</h2>
-  <form action="/update/{{task.id}}" method="POST">
-    <input type="text" name="task" value={{task.task}} required>
+  <form action="/update/{{task[0]}}" method="POST">
+    <input type="text" name="title" value="{{task[1]}}" required>
     <button type="submit">Update</button>
   </form>
   <br>
