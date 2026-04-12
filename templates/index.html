@@ -18,6 +18,12 @@
       Remaining: {{remaining}}
     </h3>
 
+    <div style="text-align:center;">
+      <a href="/?filter=all">All</a>
+      <a href="/?filter=completed">Completed</a>
+      <a href="/?filter=pending">Pending</a>
+    </div>
+    <br>
     <form action="/add" method="POST">
       <input type="text" name="title" placeholder="Enter new Task" required />
       <button type="submit">Add Task</button>

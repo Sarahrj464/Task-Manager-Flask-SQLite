@@ -87,3 +87,30 @@ def count_task():
   return total,completed,remaining
 
 
+# ------------> FILTER TASK
+def get_completed_task():
+  conn=connect_db()
+  c=conn.cursor()
+  
+  # completed
+  c.execute("SELECT * FROM tasks WHERE completed=1")
+  data=c.fetchall()
+  
+  conn.close()
+  return data
+
+
+
+def get_pending_task():
+  conn=connect_db()
+  c=conn.cursor()
+  
+  # completed
+  c.execute("SELECT * FROM tasks WHERE completed=0")
+  data=c.fetchall()
+  
+  conn.close()
+  return data
+  
+
+
