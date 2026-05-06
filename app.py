@@ -3,7 +3,7 @@ import database
 
 app=Flask(__name__)
 
-# create db when app starts
+# create db when app starts 
 database.create_table()
 
 # ----> HOME ROUTE (show task)
